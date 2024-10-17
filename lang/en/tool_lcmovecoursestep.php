@@ -14,6 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Strings for move course step.
+ *
+ * @package    tool_lcmovecoursestep
+ * @copyright  2024 Catalyst IT
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 $string['pluginname'] = 'Move course step';
 $string['privacy:metadata'] = 'The plugin does not store any personal data.';
 $string['categories_noselection'] = 'Please select a category.';

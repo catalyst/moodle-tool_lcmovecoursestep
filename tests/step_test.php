@@ -15,12 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Trigger test for end date delay trigger.
+ * Trigger test for move course step.
  *
- * @package    tool_lchidecoursestep
+ * @package    tool_lcmovecoursestep
+ * @copyright  2024 Catalyst IT
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-namespace tool_lcmovecoursestep\tests;
+namespace tool_lcmovecoursestep;
 
 use tool_lifecycle\action;
 use tool_lifecycle\local\entity\trigger_subplugin;
@@ -31,12 +32,11 @@ use tool_lifecycle\local\manager\workflow_manager;
 use tool_lifecycle\processor;
 use tool_lifecycle\settings_type;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Trigger test for start date delay trigger.
  *
  * @package    tool_lcmovecoursestep
+ * @copyright  2024 Catalyst IT
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class step_test extends \advanced_testcase {
@@ -52,14 +52,19 @@ class step_test extends \advanced_testcase {
     /** @var trigger_subplugin $trigger Instances of the triggers under test. */
     private $trigger;
 
-    /** @var array $course Instance of the course under test. */
+    /** @var object $course Instance of the course under test. */
     private $course;
 
+    /** @var object $oldcategory Instance of the old category. */
     private $oldcategory;
 
+    /** @var object $newcategory Instance of the new category. */
     private $newcategory;
 
-    public function setUp() : void {
+    /**
+     * Set up the test.
+     */
+    public function setUp(): void {
         global $USER;
 
         // We do not need a sesskey check in these tests.
@@ -85,7 +90,7 @@ class step_test extends \advanced_testcase {
         settings_manager::save_settings($step->id, settings_type::STEP,
             "tool_lcmovecoursestep",
             [
-                "category" => $this->newcategory->id
+                "category" => $this->newcategory->id,
             ]
         );
 
@@ -115,5 +120,4 @@ class step_test extends \advanced_testcase {
         $course = get_course($this->course->id);
         $this->assertEquals($this->newcategory->id, $course->category);
     }
-
 }

@@ -15,9 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Move a course to another category
+ * Version details.
  *
- * @package    core
+ * @package    tool_lcmovecoursestep
+ * @copyright  2024 Catalyst IT
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -27,8 +28,8 @@ $plugin->version   = 2023100400;
 $plugin->requires  = 2020061500;
 $plugin->component = 'tool_lcmovecoursestep';
 
-$plugin->dependencies = array(
-    'tool_lifecycle' => 2023050201
-);
+$plugin->dependencies = [
+    'tool_lifecycle' => 2023050201,
+];
 
 $plugin->supported = [39, 450];
