@@ -23,7 +23,7 @@
  */
 
 $string['pluginname'] = 'Move course step';
-$string['plugindescription'] = 'This step allows to move a course to another category.';
+$string['plugindescription'] = 'This step allows you to move a course to another category.';
 $string['privacy:metadata'] = 'The plugin does not store any personal data.';
 $string['categories_noselection'] = 'Please select a category.';
 $string['emptycategory'] = 'Category must not be empty.';
