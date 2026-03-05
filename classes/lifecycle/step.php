@@ -46,12 +46,21 @@ class step extends libbase {
     }
 
     /**
+     * Get the plugin name.
+     *
+     * @return string
+     */
+    public function get_plugin_name() {
+        return get_string('pluginname', 'tool_lcmovecoursestep');
+    }
+
+    /**
      * Get the description.
      *
      * @return string
      */
     public function get_plugin_description() {
-        return "Move course step plugin";
+        return get_string('plugindescription', 'tool_lcmovecoursestep');
     }
 
     /**
